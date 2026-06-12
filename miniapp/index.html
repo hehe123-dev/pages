@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>企融通小程序</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="status-bar">
+      <span id="sb-time">9:41</span>
+      <span>企融通</span>
+      <span>📶 🔋</span>
+    </div>
+    <div class="nav-bar" id="navBar">
+      <span class="back" id="navBack" style="display:none">‹</span>
+      <span id="navTitle">企融通</span>
+      <span class="right" id="navRight"></span>
+    </div>
+    <div class="page" id="page"></div>
+    <div class="tab-bar" id="tabBar">
+      <div class="tab" data-tab="home"><i data-lucide="home" class="ico"></i><span>首页</span></div>
+      <div class="tab" data-tab="reports"><i data-lucide="file-text" class="ico"></i><span>报告</span></div>
+      <div class="tab" data-tab="vas"><i data-lucide="wrench" class="ico"></i><span>服务</span></div>
+      <div class="tab" data-tab="policy"><i data-lucide="landmark" class="ico"></i><span>政策</span></div>
+      <div class="tab" data-tab="profile"><i data-lucide="user" class="ico"></i><span>我的</span></div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="modal-mask" id="modalMask"><div class="modal" id="modal"></div></div>
+  </div>
+
+  <script src="../shared/store.js"></script>
+  <script src="../shared/utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

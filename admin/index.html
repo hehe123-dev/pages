@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>企融通 - 运营后台</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><i data-lucide="settings" class="logo"></i> 运营后台</div>
+      <nav class="menu" id="menu"></nav>
+    </aside>
+    <main class="main">
+      <div class="topbar">
+        <div class="crumb" id="crumb"></div>
+        <div class="acc"><i data-lucide="user"></i> admin</div>
+        <div class="reset" id="resetBtn">重置演示数据</div>
+      </div>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+  <div class="modal-mask" id="modalMask">
+    <div class="modal" id="modal">
+      <div class="modal-h" id="modalH"><span id="modalT"></span><span class="x" id="modalX">×</span></div>
+      <div class="modal-b" id="modalB"></div>
+      <div class="modal-f" id="modalF"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script src="../shared/store.js"></script>
+  <script src="../shared/utils.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
