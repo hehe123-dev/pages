@@ -1,0 +1,26 @@
+{
+  "name": "miniapp-demo",
+  "version": "1.0.0",
+  "description": "这是一个完整的**小程序端 + 运营后台**前端交互演示系统，模拟科创服务平台的真实业务场景。两个系统通过浏览器 `localStorage` + `BroadcastChannel` 实现实时数据联动，无需后端服务即可完整体验业务流程。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/wangdemo2026/bizfinance-mini-program.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "claude-frontend": "^0.1.0"
+  },
+  "dependencies": {
+    "cc-prompter": "^0.3.2"
+  }
+}
