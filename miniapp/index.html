@@ -4,8 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>企融通小程序</title>
-  <link rel="stylesheet" href="style.css" />
+  <link id="mainStyle" rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    window._theme = localStorage.getItem('miniapp_theme') || 'default';
+    if (window._theme === 'elui') {
+      document.getElementById('mainStyle').href = 'style-elui.css';
+    }
+    window.switchTheme = function(theme) {
+      window._theme = theme;
+      localStorage.setItem('miniapp_theme', theme);
+      document.getElementById('mainStyle').href = theme === 'elui' ? 'style-elui.css' : 'style.css';
+    };
+  </script>
 </head>
 <body>
   <div class="phone-frame">
@@ -24,7 +35,7 @@
       <div class="tab" data-tab="home"><i data-lucide="home" class="ico"></i><span>首页</span></div>
       <div class="tab" data-tab="reports"><i data-lucide="file-text" class="ico"></i><span>报告</span></div>
       <div class="tab" data-tab="vas"><i data-lucide="wrench" class="ico"></i><span>服务</span></div>
-      <div class="tab" data-tab="policy"><i data-lucide="landmark" class="ico"></i><span>政策</span></div>
+      <div class="tab" data-tab="aiChat"><i data-lucide="bot" class="ico"></i><span>AI助手</span></div>
       <div class="tab" data-tab="profile"><i data-lucide="user" class="ico"></i><span>我的</span></div>
     </div>
     <div class="toast" id="toast"></div>
@@ -33,6 +44,41 @@
 
   <script src="../shared/store.js"></script>
   <script src="../shared/utils.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
+  <script>
+    window._homeStyle = localStorage.getItem('miniapp_home_style') || 'default';
+    if (window._homeStyle === 'v2') {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'style-home-v2.css';
+      document.head.appendChild(link);
+      
+      var script = document.createElement('script');
+      script.src = 'home-v2.js';
+      document.body.appendChild(script);
+    }
+    window.switchHomeStyle = function(style) {
+      window._homeStyle = style;
+      localStorage.setItem('miniapp_home_style', style);
+      location.reload();
+    };
+
+    window._policyMatchStyle = localStorage.getItem('miniapp_policy_match_style') || 'v2';
+    if (window._policyMatchStyle === 'v2') {
+      var pmLink = document.createElement('link');
+      pmLink.rel = 'stylesheet';
+      pmLink.href = 'style-policy-match-v2.css';
+      document.head.appendChild(pmLink);
+      
+      var pmScript = document.createElement('script');
+      pmScript.src = 'policy-match-v2.js';
+      document.body.appendChild(pmScript);
+    }
+    window.switchPolicyMatchStyle = function(style) {
+      window._policyMatchStyle = style;
+      localStorage.setItem('miniapp_policy_match_style', style);
+      location.reload();
+    };
+  </script>
 </body>
 </html>
